@@ -39,6 +39,7 @@
 <li>Listings have no "ClosePrice" data, but with listing status as "Closed" are excluded.</li>
 <li>Listings of non "Mobile housing", but with price "&lt; 30000" are excluded.</li>
 <li>Listings with 100+ bathrooms are converted to maximum number 25 bathrooms</li>
+<li>New variable: "Price_diff": value of closing price minus listing price</li>
 <li>New variable "duration": length of time a listing has been posted</li>
 <li>New variable "neighbour": clustering results</li>
 <li><p>New variable "others": factor variable of "Unusually big, expensive" houses and "normal" houses</p></li>
@@ -67,9 +68,11 @@ Version 4: Ideal data set will include</li>
 <h3>
 <a id="conclusions" class="anchor" href="#conclusions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusions</h3>
 
-<p>Version 1 conclusion: The average ...
-Version 2 conclusion: The additional information contained in "list price" almost make the estimation perfectly. Suggesting there are more significant variables, other than current 15, affecting the the prices.
-Version 3 </p>
+<p>Version 1 conclusion: The average difference between predicted closing price and real closing price is very close to 0, suggesting the predictive model is a good predictive model with current information; however the average of absolute difference is around $35000, either it's smaller or bigger, suggesting other unknown factors are causing the difference.</p>
+
+<p>Version 2 conclusion: The additional information contained in "list price" almost make the estimation perfectly. Suggesting there are more significant variables, other than current 15, affecting the the prices.</p>
+
+<p>Version 3 conclusion: (To be continued)</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
