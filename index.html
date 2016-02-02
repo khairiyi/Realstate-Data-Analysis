@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Realstate-data-analysis by khairiyi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Realstate-data-analysis</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/khairiyi/Realstate-Data-Analysis" class="btn">View on GitHub</a>
-      <a href="https://github.com/khairiyi/Realstate-Data-Analysis/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/khairiyi/Realstate-Data-Analysis/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h1>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Realstate-data-analysis : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Realstate-data-analysis</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/khairiyi/Realstate-Data-Analysis">View on GitHub</a>
+
+          <h1 id="project_title">Realstate-data-analysis</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/khairiyi/Realstate-Data-Analysis/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/khairiyi/Realstate-Data-Analysis/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a id="realstate-data-analysis" class="anchor" href="#realstate-data-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Realstate-Data-Analysis</h1>
 
 <p>This the the readme file</p>
@@ -38,30 +50,35 @@ Data comes with 15 variables in total. Variables describes information about the
 <h3>
 <a id="data-cleaning--methodologies" class="anchor" href="#data-cleaning--methodologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Cleaning &amp; Methodologies</h3>
 
-<p>• Comments variable is eliminated for now
-• Listings have no "ClosePrice" data, but with listing status as "Closed" are excluded.
-• Listings of non "Mobile housing", but with price "&lt; 30000" are excluded.
-• Listings with 100+ bathrooms are converted to maximum number 25 bathrooms
-• New variable: "Price_diff": value of closing price minus listing price
-• New variable "duration": length of time a listing has been posted
-• New variable "neighbour": clustering results
-• New variable "others": factor variable of "Unusually big, expensive" houses and "normal" houses
-• Clustering: Use kmeans method on Latitude and Longitude to divide the data into 70 clusters(cities). 70 was determined by MLE on the main model in a separate file.
-• Cross validation: 80% of listings are randomly chosen proportionally to their cluster size as "train data set"; 20% are chosen to be the "test data set"
-• Repetition: Cross validation process is taken 1000 times, the final results will be taken by the average of them.
-• Interactive effects: Interactive effects of key variables are well considered.</p>
+<ul>
+<li>Comments variable is eliminated for now</li>
+<li>Listings have no "ClosePrice" data, but with listing status as "Closed" are excluded.</li>
+<li>Listings of non "Mobile housing", but with price "&lt; 30000" are excluded.</li>
+<li>Listings with 100+ bathrooms are converted to maximum number 25 bathrooms</li>
+<li>New variable: "Price_diff": value of closing price minus listing price</li>
+<li>New variable "duration": length of time a listing has been posted</li>
+<li>New variable "neighbour": clustering results</li>
+<li><p>New variable "others": factor variable of "Unusually big, expensive" houses and "normal" houses</p></li>
+<li><p>Clustering: Use kmeans method on Latitude and Longitude to divide the data into 70 clusters(cities). 70 was determined by MLE on the main model in a separate file.</p></li>
+<li>Cross validation: 80% of listings are randomly chosen proportionally to their cluster size as "train data set"; 20% are chosen to be the "test data set"</li>
+<li>Repetition: Cross validation process is taken 1000 times, the final results will be taken by the average of them.</li>
+<li>Interactive effects: Interactive effects of key variables are well considered.</li>
+</ul>
 
 <h3>
 <a id="versions-of-the-analysis" class="anchor" href="#versions-of-the-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Versions of the analysis</h3>
 
 <p>Version 1: Using the existing data to build the predictive model, without variable "list price" 
 Version 2: Using the existing data to build the predictive model, with variable "list price" 
-Version 3: Importing external data sources
-• Actual GIS information of neizbourghoods, Cities in Arizona state, and accurately assign listings to its location
-• Identify locations of Supermarket, malls, schools, hospitals and etc., calculated average distance of a house to its nearest stores.
-• Mortgage interest rate associated with properties' listed time'
-• ... 
-Version 4: Ideal data set will include Years of the house; number of garages; decoration cost; buyer's payment method and etc.,</p>
+Version 3: Importing external data sources</p>
+
+<ul>
+<li>Actual GIS information of neizbourghoods, Cities in Arizona state, and accurately assign listings to its location</li>
+<li>Identify locations of Supermarket, malls, schools, hospitals and etc., calculated average distance of a house to its nearest stores.</li>
+<li>Mortgage interest rate associated with properties' listed time'</li>
+<li>... 
+Version 4: Ideal data set will include Years of the house; number of garages; decoration cost; buyer's payment method and etc.,</li>
+</ul>
 
 <h3>
 <a id="conclusions" class="anchor" href="#conclusions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusions</h3>
@@ -74,15 +91,18 @@ Version 3 conclusion: (To be continued)</p>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>You can contact me through My <a href="https://www.linkedin.com/in/khairi-yi-4966a062?">linkedin</a></p>
+      </section>
+    </div>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/khairiyi/Realstate-Data-Analysis">Realstate-data-analysis</a> is maintained by <a href="https://github.com/khairiyi">khairiyi</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Realstate-data-analysis maintained by <a href="https://github.com/khairiyi">khairiyi</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
+    </div>
 
-    </section>
+    
 
-  
   </body>
 </html>
