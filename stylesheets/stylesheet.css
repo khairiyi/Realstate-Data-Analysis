@@ -152,8 +152,8 @@ p img {
   display: inline;
   margin: 0;
   padding: 0;
-  vertical-align: middle;
-  text-align: center;
+  vertical-align: left;
+  text-align: left;
   border: none;
 }
 
