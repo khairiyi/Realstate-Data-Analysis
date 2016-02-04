@@ -66,9 +66,17 @@
 Data comes with 15 variables in total. Variables describes information about the listings such as Geo location, list price, closing price, number of bedroom, house size and etc.,</p>
 
 <h3>
+<a id="visualization" class="anchor" href="#visualization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visualization</h3>
+
+<p>Complete Summary tab: It's a general summaries of all listing data without cleaning, filtering. It is only divided into 13 neiboughhoods</p>
+<p>Predictive model evaluation: In the geo map, the number on top is the actual closing price; the number on bottom is the difference of predicted. Difference_range is a filter segmented in absolute difference</p>
+<p>1000 trials summary: The datta set is randomly cross validated 1000 times, the the predicted difference is calculated in absolute difference. Model prediction is 29388 worse than human prediction</p>
+
+<h3>
 <a id="goal" class="anchor" href="#goal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goal</h3>
 
-<p>The goal is to predict the closing prices of properties, using all information from the data set and from external data sources, and answering the following questions.</p>
+<p>The goal is to predict the closing prices of properties, using all information from the data set and from external data sources, and confirming/answering the following questions.</p>
+
 
 <h3>
 <a id="data-cleaning--methodologies" class="anchor" href="#data-cleaning--methodologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Cleaning &amp; Methodologies</h3>
@@ -112,7 +120,7 @@ Version 3: Importing external data sources:
 
 <p>Version 1 conclusion: The average difference between predicted closing price and real closing price is very close to 0, suggesting the predictive model is a good predictive model with current information; however the average of absolute difference is around $35000, either it's smaller or bigger, suggesting other unknown factors are causing the difference.</p>
 
-<p>Version 2 conclusion: The additional information contained in "list price" almost make the estimation perfectly. Suggesting there are more significant variables, other than current 15, affecting the the prices.</p>
+<p>Version 2 conclusion: (Done in another file)When the additional variable "list price" is added, the prediction model almost makes the estimation perfectly. Suggesting human estimation provide further information other than current 15 variables.</p>
 <p>Version 3 conclusion: (To be continued)</p>
 
 <h3>
