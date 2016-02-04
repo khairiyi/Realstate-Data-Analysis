@@ -75,7 +75,7 @@ Data comes with 15 variables in total. Variables describes information about the
 <h3>
 <a id="goal" class="anchor" href="#goal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goal</h3>
 
-<p>The goal is to predict the closing prices of properties, using all information from the data set and from external data sources, and confirming/answering the following questions.</p>
+<p>The goal is to predict the closing prices of properties, using all information from the data set and from external data sources.</p>
 
 
 <h3>
@@ -118,7 +118,13 @@ Version 3: Importing external data sources:
 <h3>
 <a id="conclusions" class="anchor" href="#conclusions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusions</h3>
 
-<p>Version 1 conclusion: The average difference between predicted closing price and real closing price is very close to 0, suggesting the predictive model is a good predictive model with current information; however the average of absolute difference is around $35000, either it's smaller or bigger, suggesting other unknown factors are causing the difference.</p>
+<p>Version 1 conclusion: however the average of absolute difference is around $35000, either it's smaller or bigger, suggesting other unknown factors are causing the difference.</p>
+<ul>
+<li>This estimaation is poor when the house livingarea goes over 2000ft, especially in non-urban areas, suggesting possibilities of differenct factors in large houese, such as the farms they come with</li>
+<li>For houeses sold with in 71 days, this model has the best estimation. </li>
+<li>On average, the closing price is about $8000 lower than listing prices</li>
+<li>Listings that have not been sold tend to have much larger predictive dicrepency, suggest they might have unreasonable pricing.</li>
+</ul>
 
 <p>Version 2 conclusion: (Done in another file)When the additional variable "list price" is added, the prediction model almost makes the estimation perfectly. Suggesting human estimation provide further information other than current 15 variables.</p>
 <p>Version 3 conclusion: (To be continued)</p>
