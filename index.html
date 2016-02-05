@@ -62,20 +62,20 @@
 <h3>
 <a id="background" class="anchor" href="#background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h3>
 
-<p>Data consists of 57258 real state properties from the states of Arizona, Alaska, Oregon, California, New Mexico, Texas, and Mexico. But only 11 listings are out of Arizona state, and therefore excluded. The data used are all listings in Arizona.
+<p>Data consists of n = 57258 real state properties from the states of Arizona, Alaska, Oregon, California, New Mexico, Texas, and Mexico. Only 11 listings are out of Arizona state, so they are excluded in this analysis. The data used are all listings in Arizona.
 Data comes with 15 variables in total. Variables describes information about the listings such as Geo location, list price, closing price, number of bedroom, house size and etc.,</p>
 
 <h3>
 <a id="visualization" class="anchor" href="#visualization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visualization</h3>
 
-<p>Complete Summary tab: It's a general summaries of all listing data without cleaning, filtering. It is only divided into 13 neiboughhoods</p>
-<p>Predictive Model Evaluation tab: In the geo map, the number on top is the actual closing price; the number on bottom is the difference of predicted. Difference_range is a filter segmented in absolute difference</p>
-<p>1000 Trials Summary tab: The datta set is randomly cross validated 1000 times, the the predicted difference is calculated in absolute difference. Model prediction is 29388 worse than human prediction</p>
+<p>Complete Summary tab: It is a summary of all listing data without cleaning, filtering. For simplicity reason, they divided into 13 neiboughhoods at this tab</p>
+<p>Predictive Model Evaluation tab: In the geo map, the number on top is the actual closing price; the numbers on the bottom are the differences of predicted prices to actual prices. Difference_range is a filter segmented in absolute difference</p>
+<p>1000 Trials Summary tab: The data set is randomly divided for cross validation, in 1000 different seeds. (set.seed(i)), Pred_diff, is the ABSOLUTE difference of predicted prices to actual prices. This model prediction' is off on average of $29388, compared to human prediction</p>
 
 <h3>
 <a id="goal" class="anchor" href="#goal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goal</h3>
 
-<p>The goal is to predict the closing prices of properties, using all information from the data set and from external data sources.</p>
+<p>The goal is to predict the actual market prices of properties in Arizona State, using all information including external data sources.</p>
 
 
 <h3>
@@ -83,21 +83,21 @@ Data comes with 15 variables in total. Variables describes information about the
 
 <ul>
 
-<li>Comments variable is eliminated for now</li>
-<li>Listings have no "ClosePrice" data, but with listing status as "Closed" are excluded.</li>
+<li>Variable "Comments" is held for future analysis</li>
+<li>Listings that have no "ClosePrice" data, but with listing status as "Closed" are excluded.</li>
 <li>Listings of non "Mobile housing", but with price "&lt; $30000" are excluded.</li>
 <li>Listings with 100+ bathrooms are converted to second maximum number of 25 bathrooms</li>
 <li>New variable: "Price_diff": the value of closing price minus listing price</li>
 <li>New variable "duration": the length of time a listing has been posted</li>
-<li>New variable "neighbour": clustering results</li>
+<li>New variable "neighbour": clustering results, at k = 70, it shows the best estimation</li>
 <li>New variable "others": factor variable of "unusually big, expensive" houses and "normal" houses</li>
 
 <p>1. Clustering: Use kmeans method on Latitude and Longitude to divide the data into 70 clusters(cities). 70 was determined by MLE on the main model in a separate file.</p>
 <p>2. Cross validation: 80% of listings are randomly chosen proportionally to their cluster size as "train data set"; 20% are chosen to be the "test data set"</p>
 <p>3. Repetition: Cross validation process is taken 1000 times, the final results will be taken by the average of them.</p>
-<p>4. Interactive effects: Interactive effects of key variables are well considered.</p>
+<p>4. Interactive effects: Interactive effects of key variables are fully considered in the model.</p>
 
-The post-cleaning data size reduces to 55333
+The post-cleaned data reduces to n = 55333
 </ul>
 
 <h3>
@@ -110,7 +110,7 @@ Version 3: Importing external data sources:
 <ul>
 <li>Actual GIS information of neizbourghoods, Cities in Arizona state, and accurately assign listings to its location</li>
 <li>Identify locations of Supermarket, malls, schools, hospitals and etc., calculated average distance of a house to its nearest stores.</li>
-<li>Mortgage interest rate associated with properties' listed time'</li>
+<li>Mortgage interest rates in according to properties' listed time</li>
 <li>... </li>
 </ul>
 <p>Version 4: Ideal data set will include Years of the house; number of garages; decoration cost; buyer's payment method and etc.,</p>
@@ -118,11 +118,12 @@ Version 3: Importing external data sources:
 <h3>
 <a id="conclusions" class="anchor" href="#conclusions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusions</h3>
 
-<p>Version 1 conclusion: however the average of absolute difference is around $35000, either it's smaller or bigger, suggesting other unknown factors are causing the difference.</p>
+<p>Version 1 conclusion: The average of Pred_diff is around $35000, and estimations have both lower-than and higher-than situations, suggesting there are other unknown factors affecting pricing</p>
+<p>Moreover:</p>
 <ul>
 <li>This model estimation is poor when the house's livingarea goes over 2000ft, especially in non-urban areas, suggesting possibilities of additional factors that influence large houses'prices, such as their architectues styles, the farms they come with</li>
-<li>The longer a house is on market,the worse prediction the model is. For houses sold within 71 days, the prediction error is the least. </li>
-<li>On average, the actual closing price is about $8000 lower than original listing prices</li>
+<li>The longer a house is on market,the worse prediction the model is. For houses sold within 71 days, the prediction error is the lowest. </li>
+<li>On average, the actual closing price is about $8000 lower than original listing price</li>
 <li>Listings that have not been sold tend to have much larger predictive dicrepency, suggesting they might have unreasonable high pricing.</li>
 </ul>
 
