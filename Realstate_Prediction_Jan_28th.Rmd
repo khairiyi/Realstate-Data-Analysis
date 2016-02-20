@@ -6,7 +6,7 @@ output: html_document
 ---
 1. Import dataset and cleaning
 ```{r}
-datta_raw <- read.csv("/Users/blackboyyi/Opendoor/data_sci_snippet.csv", na.strings=c("","NA") )
+datta_raw <- read.csv("data_sci_snippet.csv", na.strings=c("","NA") )
 datta <- datta_raw[,-11] #Leave the comment section for now
 table(datta$ListingStatus); sum(is.na(datta$ClosePrice) == FALSE) #See the status of listings in the data. # There's discrepency of # Closed listing and # of listings that have ClosePrice, we will have a closer look below.
 problem_data <- is.na(datta$ClosePrice) == FALSE & datta$ListingStatus != "Closed" ; dim(datta[problem_data,])[1] #There are 328 of problematic listing data.Such as an active listing has a closePrice.
@@ -126,6 +126,6 @@ for (i in 1:2){
 ```
 6. Exporting results
 ```{r}
-write.csv(trials, "/Users/blackboyyi/Google Drive/Data Analysis/Prediction_normal_results.csv")
+write.csv(trials, "Prediction_normal_results.csv")
 ```
 
