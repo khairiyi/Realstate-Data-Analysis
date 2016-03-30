@@ -62,7 +62,7 @@
 <h3>
 <a id="background" class="anchor" href="#background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h3>
 
-<p>Data consists of n = 57258 real estate properties from the states of Arizona, Alaska, Oregon, California, New Mexico, Texas, and Mexico. Only 11 listings are out of Arizona state, so they are excluded in this analysis. The data used are all listings in Arizona.
+<p>Data consists of n = 57,258 real estate properties from the states of Arizona, Alaska, Oregon, California, New Mexico, Texas, and Mexico. Only 11 listings are out of Arizona state, so they are excluded in this analysis. The data used are all listings in Arizona.
 Data comes with 15 variables in total. Variables describes information about the listings such as Geo location, list price, closing price, number of bedroom, house size and etc.,</p>
 
 <h3>
@@ -70,7 +70,7 @@ Data comes with 15 variables in total. Variables describes information about the
 
 <p>Complete Summary tab: It is a summary of all listing data without cleaning, filtering. For simplicity reason, they divided into 13 neiboughhoods at this tab</p>
 <p>Predictive Model Evaluation tab: In the geo map, the number on top is the actual closing price; the numbers on the bottom are the differences of predicted prices to actual prices. Difference_range is a filter segmented in absolute difference</p>
-<p>1000 Trials Summary tab: The data set is randomly divided for cross validation, in 1000 different seeds. (set.seed(i)), Pred_diff, is the ABSOLUTE difference of predicted prices to actual prices. This model prediction' is off on average of $29388, compared to human prediction</p>
+<p>1000 Trials Summary tab: The data set is randomly divided for cross validation, in 1000 different seeds. (set.seed(i)), Pred_diff, is the ABSOLUTE difference of predicted prices to actual prices. This model prediction' is off on average of $29,388, compared to human prediction</p>
 
 <h3>
 <a id="goal" class="anchor" href="#goal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goal</h3>
@@ -85,7 +85,7 @@ Data comes with 15 variables in total. Variables describes information about the
 
 <li>Variable "Comments" is held for future analysis</li>
 <li>Listings that have no "ClosePrice" data, but with listing status as "Closed" are excluded.</li>
-<li>Listings of non "Mobile housing", but with price "&lt; $30000" are excluded.</li>
+<li>Listings of non "Mobile housing", but with price "&lt; $30,000" are excluded.</li>
 <li>Listings with 100+ bathrooms are converted to second maximum number of 25 bathrooms</li>
 <li>New variable: "Price_diff": the value of closing price minus listing price</li>
 <li>New variable "duration": the length of time a listing has been posted</li>
@@ -97,7 +97,7 @@ Data comes with 15 variables in total. Variables describes information about the
 <p>3. Repetition: Cross validation process is taken 1000 times, the final results will be taken by the average of them.</p>
 <p>4. Interactive effects: Interactive effects of key variables are fully considered in the model.</p>
 
-The post-cleaned data reduces to n = 55333
+The post-cleaned data reduces to n = 55,333
 </ul>
 
 <h3>
@@ -118,7 +118,7 @@ Version 3: Importing external data sources:
 <h3>
 <a id="conclusions" class="anchor" href="#conclusions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusions</h3>
 
-<p>Version 1 conclusion: The average of Pred_diff is around $35000, and estimations have both lower-than and higher-than situations, suggesting there are other unknown factors affecting pricing</p>
+<p>Version 1 conclusion: The average of Pred_diff is around $35,000, and estimations have both lower-than and higher-than situations, suggesting there are other unknown factors affecting pricing</p>
 <p>Moreover:</p>
 <ul>
 <li>This model estimation is poor when the house's livingarea goes over 2000ft, especially in non-urban areas, suggesting possibilities of additional factors that influence large houses'prices, such as their architectues styles, the farms they come with</li>
